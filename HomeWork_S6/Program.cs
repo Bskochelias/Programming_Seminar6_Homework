@@ -18,7 +18,26 @@ int Proverca_chisla(string text)
     }
 }
 
+//Создание двухмерного массива с случайными числами
+int [,] CreateMass(int strok,int stolbetsov,int min,int max)
+{
+  int[,] arra = new int[strok,stolbetsov];
+  for(int i=0;i<arra.GetLength(0);i++)
+    for(int j =0;j<arra.GetLength(1);j++)
+      arra[i,j] = new Random().Next(min,max);
+  return arra;
+}
 
+//Печать двухмерного массива
+void PrintMas(int [,]arra)
+{
+  for(int i=0;i<arra.GetLength(0);i++)
+  {
+    for(int j =0;j<arra.GetLength(1);j++)
+    System.Console.Write($"{arra[i,j]} ");
+  System.Console.WriteLine();
+  }
+}
 
 int otvet1 = 0;
 string? otvet2;
@@ -51,6 +70,15 @@ do
 //Начало тела задач
 
 //1. Показать двумерный массив размером m×n заполненный вещественными числами
+int m = Proverca_chisla("Введите строки: ");
+int n = Proverca_chisla("Введите столбцы: ");
+int min = Proverca_chisla("Введите минмальное значения рандома: ");
+int max = Proverca_chisla("Введите максимальное значения рандома: ");
+
+int[,]arra = CreateMass(m,n,min,max);
+System.Console.WriteLine("Получился слудущий массив:");
+PrintMas(arra);
+
 
 
 //Конец тела задач    
