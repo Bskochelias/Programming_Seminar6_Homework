@@ -121,6 +121,30 @@ if (otvet1==3)
   PrintMas(arra);
 }
 
+//4. В матрице чисел найти сумму элементов главной диагонали
+if (otvet1==4)
+{
+  int m = Proverca_chisla("Введите строки: ");
+  int n = Proverca_chisla("Введите столбцы: ");
+  int min = Proverca_chisla("Введите минмальное значения рандома: ");
+  int max = Proverca_chisla("Введите максимальное значения рандома: ");
+
+  int[,]arra = CreateMass(m,n,min,max);
+
+  System.Console.WriteLine();
+  System.Console.WriteLine("Получился следующий массив:");
+  PrintMas(arra);
+
+  int j=0,sum=0;
+  for(int i=0;i<arra.GetLength(0);i++)
+      {
+        sum +=arra[i,j];
+        j++;
+      }
+
+  System.Console.WriteLine($"Cумму элементов главной диагонали: {sum}.");
+}
+
 //Конец тела задач    
   Console.Write("Нажмите <Enter> для продолжения... ");
       while (Console.ReadKey().Key != ConsoleKey.Enter) {}
