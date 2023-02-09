@@ -50,7 +50,7 @@ do
     Console.WriteLine("Добрый день прошу выбрать цифру из списка что Вы хотите сделать?");
     Console.WriteLine("__________");
     Console.WriteLine("1. Показать двумерный массив размером m×n заполненный вещественными числами");
-    Console.WriteLine("2. НЗадать двумерный массив следующим правилом: Aₘₙ = m+n");
+    Console.WriteLine("2. Задать двумерный массив следующим правилом: Aₘₙ = m+n");
     Console.WriteLine("3. В двумерном массиве заменить элементы, у которых оба индекса чётные на их квадраты");
     Console.WriteLine("4. В матрице чисел найти сумму элементов главной диагонали");
     Console.WriteLine(" ");
@@ -70,16 +70,33 @@ do
 //Начало тела задач
 
 //1. Показать двумерный массив размером m×n заполненный вещественными числами
-int m = Proverca_chisla("Введите строки: ");
-int n = Proverca_chisla("Введите столбцы: ");
-int min = Proverca_chisla("Введите минмальное значения рандома: ");
-int max = Proverca_chisla("Введите максимальное значения рандома: ");
+if (otvet1==1)
+{
+  int m = Proverca_chisla("Введите строки: ");
+  int n = Proverca_chisla("Введите столбцы: ");
+  int min = Proverca_chisla("Введите минмальное значения рандома: ");
+  int max = Proverca_chisla("Введите максимальное значения рандома: ");
 
-int[,]arra = CreateMass(m,n,min,max);
-System.Console.WriteLine("Получился слудущий массив:");
-PrintMas(arra);
+  int[,]arra = CreateMass(m,n,min,max);
+  
+  System.Console.WriteLine("Получился слудущий массив:");
+  PrintMas(arra);
+}
 
+//2. Задать двумерный массив следующим правилом: Aₘₙ = m+n
+if (otvet1==2)
+{
+  int m = Proverca_chisla("Введите строки: ");
+  int n = Proverca_chisla("Введите столбцы: ");
 
+  int[,] arra = new int[m,n];
+  for(int i=0;i<arra.GetLength(0);i++)
+    for(int j =0;j<arra.GetLength(1);j++)
+      arra[i,j] = i+j;
+
+  System.Console.WriteLine("Получился слудущий массив:");
+  PrintMas(arra);
+}
 
 //Конец тела задач    
   Console.Write("Нажмите <Enter> для продолжения... ");
