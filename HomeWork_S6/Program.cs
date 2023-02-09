@@ -79,7 +79,7 @@ if (otvet1==1)
 
   int[,]arra = CreateMass(m,n,min,max);
   
-  System.Console.WriteLine("Получился слудущий массив:");
+  System.Console.WriteLine("Получился следующий массив:");
   PrintMas(arra);
 }
 
@@ -94,7 +94,30 @@ if (otvet1==2)
     for(int j =0;j<arra.GetLength(1);j++)
       arra[i,j] = i+j;
 
-  System.Console.WriteLine("Получился слудущий массив:");
+  System.Console.WriteLine("Получился следующий массив:");
+  PrintMas(arra);
+}
+
+//3. В двумерном массиве заменить элементы, у которых оба индекса чётные на их квадраты
+if (otvet1==3)
+{
+  int m = Proverca_chisla("Введите строки: ");
+  int n = Proverca_chisla("Введите столбцы: ");
+  int min = Proverca_chisla("Введите минмальное значения рандома: ");
+  int max = Proverca_chisla("Введите максимальное значения рандома: ");
+
+  int[,]arra = CreateMass(m,n,min,max);
+
+  System.Console.WriteLine();
+  System.Console.WriteLine("Начальный массив:");
+  PrintMas(arra);
+  System.Console.WriteLine();
+
+  for(int i=0;i<arra.GetLength(0);i++)
+    for(int j =0;j<arra.GetLength(1);j++)
+      if (i%2==0&&j%2==0) {arra[i,j] *= arra[i,j];}
+
+  System.Console.WriteLine("Получился следующий массив:");
   PrintMas(arra);
 }
 
